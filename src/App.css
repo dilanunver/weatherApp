@@ -1,6 +1,84 @@
-.select {
-  width: 50%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #faf8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  background-image: url(./images/pexels-darius-krause-2931915.jpg);
+  height: 736px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.select,
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.select-select {
+  width: 200px;
+  margin-top: 100px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
 }
 .select-button {
+  border-radius: 4px;
+  padding: 10px 7px;
+  background: #a8d9f8;
+  border: none;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  margin-top: 100px;
+}
+.select-button:hover {
+  background: #83bde2;
+  transition: all 0.1s linear;
+}
+.all-info {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+.city {
+  font-size: 35px;
+  font-weight: 400;
+}
+.temp {
+  font-size: 144px;
+}
+.desc {
+  display: flex;
+  justify-self: flex-start;
+  align-self: flex-start;
+  font-weight: 200;
+  font-size: 36px;
+}
+.time-date {
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-start;
+  align-self: flex-start;
+  padding: 20px 0;
+  font-weight: 400;
+  color: #aec8d7;
+}
+.time {
+  padding: 7px 0;
 }
