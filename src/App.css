@@ -9,9 +9,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 600;
-  background-image: url(./images/pexels-darius-krause-2931915.jpg);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  background-image: url(./images/pexels-ruvim-3560044.jpg);
   height: 736px;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,24 +20,20 @@ body {
 .select,
 .info {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 .select-select {
   width: 200px;
-  margin-top: 100px;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 400;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
 }
 .select-button {
   border-radius: 4px;
   padding: 10px 7px;
   background: #a8d9f8;
   border: none;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 400;
-  margin-top: 100px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
 }
 .select-button:hover {
   background: #83bde2;
@@ -50,25 +46,29 @@ body {
   align-items: center;
 }
 .info {
-  margin-top: 80px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-self: flex-start;
-  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 .city {
   font-size: 35px;
-  font-weight: 400;
+  color: #faf8f8;
+  font-weight: 300;
 }
 .temp {
-  font-size: 144px;
+  font-size: 132px;
+  height: 150px;
+  color: #faf8f8;
 }
 .desc {
   display: flex;
-  justify-self: flex-start;
-  align-self: flex-start;
+  width: 120px;
+  text-transform: lowercase;
   font-weight: 200;
-  font-size: 36px;
+  font-size: 34px;
+  color: #faf8f8;
 }
 .time-date {
   display: flex;
@@ -76,8 +76,8 @@ body {
   justify-self: flex-start;
   align-self: flex-start;
   padding: 20px 0;
-  font-weight: 400;
-  color: #aec8d7;
+  font-weight: bold;
+  color: #c1d1db;
 }
 .time {
   padding: 7px 0;

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import data, { getCityDataForSelect } from '../src/data'
 import Select from 'react-select'
-
+import ClearImage from './images/pexels-darius-krause-2931915.jpg';
+import CloudsImage from './images/pexels-ruvim-3560044.jpg';
 
 // const url = 'http://api.openweathermap.org/data/2.5/weather?q=Mersin&appid=84f9b04fac44b3d3edfcb86811e994b4'
 
@@ -35,12 +36,26 @@ function App() {
 
   }
 
+  useEffect(() => {
+    const lowerCaseDesc = desc.toLowerCase();
+    if (lowerCaseDesc === 'clear') {
+      document.body.style.backgroundImage = `url(${ClearImage})`;
+    }
+    if (lowerCaseDesc === 'clouds') {
+      document.body.style.backgroundImage = `url(${CloudsImage})`;
+    }
+  }, [desc]);
 
 
 
   return (
     <div className='all-info'>
+      <div className='time-date'>
+        <p className='time'>{date.toLocaleTimeString()}</p>
+        <p >{date.toLocaleDateString()}</p>
+      </div>
       <div className='select'>
+
         <Select options={getCityDataForSelect}
           onChange={e => setUserSelectedCity(e.value)}
           className='select-select'
@@ -49,12 +64,8 @@ function App() {
       </div>
       <div className='info'>
         <h3 className='city'>{selectedCity} </h3>
-        <div className='time-date'>
-          <p className='time'>{date.toLocaleTimeString()}</p>
-          <p >{date.toLocaleDateString()}</p>
-        </div>
-        <p className='desc'>{desc}</p>
         <p className='temp'>{temperature}° </p>
+        <p className='desc'>{desc}</p>
 
 
 
