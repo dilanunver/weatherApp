@@ -32,8 +32,8 @@ function App() {
     if (result.name.includes(str)) {
       let lastIndex = result.name.lastIndexOf(' ');
       result.name = result.name.substring(0, lastIndex);
-      setSelectedCity(result.name);
     }
+    setSelectedCity(result.name);
 
     let converter = parseFloat(result.main.temp);
     let tempConverter = (converter - 273.15).toFixed();
