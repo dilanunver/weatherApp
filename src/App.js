@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import data, { getCityDataForSelect } from '../src/data'
+import { getCityDataForSelect } from '../src/data'
 import Select from 'react-select'
 import ClearImage from './images/pexels-darius-krause-2931915.jpg';
 import CloudsImage from './images/pexels-ruvim-3560044.jpg';
