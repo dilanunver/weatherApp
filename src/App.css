@@ -77,7 +77,8 @@ body {
   align-self: flex-start;
   padding: 20px 0;
   font-weight: bold;
-  color: #c1d1db;
+  color: #ffffff;
+  text-shadow: 1px 1px #b1b1b1;
 }
 .time {
   padding: 7px 0;

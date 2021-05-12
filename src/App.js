@@ -4,11 +4,12 @@ import data, { getCityDataForSelect } from '../src/data'
 import Select from 'react-select'
 import ClearImage from './images/pexels-darius-krause-2931915.jpg';
 import CloudsImage from './images/pexels-ruvim-3560044.jpg';
+import RainImage from './images/pexels-sid-ali-2028885.jpg';
+import SnowImage from './images/pexels-zhaocan-li-1755243.jpg';
 
-// const url = 'http://api.openweathermap.org/data/2.5/weather?q=Mersin&appid=84f9b04fac44b3d3edfcb86811e994b4'
+
 
 function App() {
-  const [cities, setCities] = useState(data)
   const [selectedCity, setSelectedCity] = useState('')
   const [userSelectedCity, setUserSelectedCity] = useState('Ankara')
   const [temperature, setTemperature] = useState('0')
@@ -27,13 +28,17 @@ function App() {
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${userSelectedCity}&appid=84f9b04fac44b3d3edfcb86811e994b4`
     const response = await fetch(url)
     const result = await response.json()
-    setSelectedCity(result.name);
+    let str = 'Province';
+    if (result.name.includes(str)) {
+      let lastIndex = result.name.lastIndexOf(' ');
+      result.name = result.name.substring(0, lastIndex);
+      setSelectedCity(result.name);
+    }
+
     let converter = parseFloat(result.main.temp);
     let tempConverter = (converter - 273.15).toFixed();
     setTemperature(tempConverter)
-    console.log(result.weather)
     setDesc(result.weather[0].main)
-
   }
 
   useEffect(() => {
@@ -44,9 +49,13 @@ function App() {
     if (lowerCaseDesc === 'clouds') {
       document.body.style.backgroundImage = `url(${CloudsImage})`;
     }
+    if (lowerCaseDesc === 'rain') {
+      document.body.style.backgroundImage = `url(${RainImage})`;
+    }
+    if (lowerCaseDesc === 'snow') {
+      document.body.style.backgroundImage = `url(${SnowImage})`;
+    }
   }, [desc]);
-
-
 
   return (
     <div className='all-info'>
@@ -66,11 +75,7 @@ function App() {
         <h3 className='city'>{selectedCity} </h3>
         <p className='temp'>{temperature}° </p>
         <p className='desc'>{desc}</p>
-
-
-
       </div>
-
     </div>
   );
 }
