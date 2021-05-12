@@ -25,7 +25,7 @@ function App() {
   })
 
   const handleSelectCity = async () => {
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${userSelectedCity}&appid=84f9b04fac44b3d3edfcb86811e994b4`
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${userSelectedCity}&appid=84f9b04fac44b3d3edfcb86811e994b4`
     const response = await fetch(url)
     const result = await response.json()
     let str = 'Province';
